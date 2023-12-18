@@ -3,11 +3,11 @@ import fs from "fs"
 const file = fs.readFileSync("../input.txt", "utf8").toString().split("\n")
 
 let total: number[] = []
-for (let i = 0; i < file.length; i++) {
+for (const line of file) {
   let checkFirst: number[] = []
 
-  for (let j = 0; j < file[i].length; j++) {
-    let numbers = parseInt(file[i][j])
+  for (const char of line) {
+    let numbers = parseInt(char)
     if (!isNaN(numbers)) {
       checkFirst.push(numbers)
     }
@@ -20,10 +20,10 @@ for (let i = 0; i < file.length; i++) {
 }
 
 let finalSum = 0
-for (let i = 0; i < total.length; i++) {
-  if (!isNaN(total[i])) {
-    finalSum += total[i]
-    console.log(`Line ${i + 1}:`, finalSum, total[i], file[i])
+for (const number of total) {
+  if (!isNaN(number)) {
+    finalSum += number
+    console.log(`Line ${number + 1}:`, finalSum, number)
   }
 }
 
