@@ -1,6 +1,6 @@
 import fs from "fs"
 
-const file = fs.readFileSync("./input.txt", "utf8").toString().split("\n")
+const file = fs.readFileSync("../input.txt", "utf8").toString().split("\n")
 
 let total: number[] = []
 for (let i = 0; i < file.length; i++) {
