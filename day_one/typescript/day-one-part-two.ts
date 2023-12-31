@@ -58,7 +58,7 @@ for (const line of file) {
   }
 
   numbers.forEach(() => {
-    firstNum = numbers.reduce((lowest: any, current: any) => {
+    firstNum = numbers.reduce((lowest: Number, current: Number) => {
       return current.index < lowest.index ? current : lowest
     })
     lastNum = numbers.reduce((highest: any, current: any) => {
@@ -82,9 +82,9 @@ for (const number of total) {
   }
 }
 
-function findAllOccurrences(string: string, substring: any) {
-  const indices: any[] = []
-  let index: number = string.indexOf(substring)
+function findAllOccurrences(string: string, substring: string) {
+  const indices: number[] = []
+  let index = string.indexOf(substring)
   while (index !== -1) {
     indices.push(index)
     index = string.indexOf(substring, index + 1)
